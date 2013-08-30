@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="45c13468-2030-48f1-8be9-13c531df3d78" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1235/EventServiceProxy" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EventServiceProxy.xsd" MetadataType="Schema" ID="57a30a22-56db-44d6-b96c-7b43ead31b56" SourceId="1" SourceUrl="http://localhost:1235/EventServiceProxy?xsd=xsd1" />
+    <MetadataFile FileName="EventServiceProxy1.xsd" MetadataType="Schema" ID="d34bfa8d-3faf-4c36-b367-2bb1f0ee014c" SourceId="1" SourceUrl="http://localhost:1235/EventServiceProxy?xsd=xsd4" />
+    <MetadataFile FileName="EventClientNetTcp.wsdl" MetadataType="Wsdl" ID="ac4486d6-b3e3-42e2-8bf6-cfced0c777b0" SourceId="1" SourceUrl="http://localhost:1235/EventServiceProxy" />
+    <MetadataFile FileName="EventServiceProxy2.xsd" MetadataType="Schema" ID="d9209b8e-0441-47dc-a6bf-a107504ef31a" SourceId="1" SourceUrl="http://localhost:1235/EventServiceProxy?xsd=xsd0" />
+    <MetadataFile FileName="VirtuosoDataSet.xsd" MetadataType="Schema" ID="9a47e795-76ad-4a46-951b-ef7d949af63a" SourceId="1" SourceUrl="http://localhost:1235/EventServiceProxy?xsd=xsd2" />
+    <MetadataFile FileName="EventServiceProxy3.xsd" MetadataType="Schema" ID="18454ecf-2f04-4dac-b85c-89cf47e06c9e" SourceId="1" SourceUrl="http://localhost:1235/EventServiceProxy?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

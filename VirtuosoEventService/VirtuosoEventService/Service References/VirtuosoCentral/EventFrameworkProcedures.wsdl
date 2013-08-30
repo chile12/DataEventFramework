@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:dl="services.wsdl" xmlns:tns="http://localhost:8890/EventFrameworkProcedures/services.wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:dime="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:content="http://schemas.xmlsoap.org/ws/2002/04/content-type/" xmlns:ref="http://schemas.xmlsoap.org/ws/2002/04/reference/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="services.wsdl" name="EventFrameworkProcedures" targetNamespace="http://localhost:8890/EventFrameworkProcedures/services.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="services.wsdl">
+      <xsd:complexType name="EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t_item_t" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t_item_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLES_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLES">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="DBschema" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLES_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="statement" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablee" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="database" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggerName" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ERR_MAIL_SEND">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="_tgt" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_urls" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_root" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_stat" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_msg" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ERR_MAIL_SENDResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_GET">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="_host" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_root" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="site_delay_sec" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_GETResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="site_delay_sec" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANT">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="keyV" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="valueV" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANTResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablename" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablename" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggername" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_PARSE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="txt" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="ua" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_PARSEResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="delay_sec" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablename" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggername" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DB">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="catalogSchema" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="dbType" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="description" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="remoteSoapEndpoint" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="remoteSparqlEndpoint" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="rdfGraphCommaList" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENT">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="instance" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="tableName" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggerName" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="occurence" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="rowVector" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_TEST_SQL_CONDITION">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="executeQuerry" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLES" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGER" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERR_MAIL_SENDRequest">
+    <wsdl:part name="parameters" element="ns0:ERR_MAIL_SEND" />
+  </wsdl:message>
+  <wsdl:message name="ERR_MAIL_SENDResponse">
+    <wsdl:part name="parameters" element="ns0:ERR_MAIL_SENDResponse" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_GETRequest">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_GET" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_GETResponse">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_GETResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANTRequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_INSERT_CONSTANT" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANTResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_INSERT_CONSTANTResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_PARSERequest">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_PARSE" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_PARSEResponse">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_PARSEResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBRequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DB" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENT" />
+  </wsdl:message>
+  <wsdl:message name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse">
+    <wsdl:part name="parameters" element="ns0:RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITION" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EventFrameworkProceduresDocLiteralPortType">
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLES">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest" message="tns:RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse" message="tns:RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGER">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest" message="tns:RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse" message="tns:RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ERR_MAIL_SEND">
+      <wsdl:input name="ERR_MAIL_SENDRequest" message="tns:ERR_MAIL_SENDRequest" />
+      <wsdl:output name="ERR_MAIL_SENDResponse" message="tns:ERR_MAIL_SENDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_GET">
+      <wsdl:input name="VFS_ROBOTS_GETRequest" message="tns:VFS_ROBOTS_GETRequest" />
+      <wsdl:output name="VFS_ROBOTS_GETResponse" message="tns:VFS_ROBOTS_GETResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANT">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANTRequest" message="tns:RDF_EVENT_FRAMEWORK_INSERT_CONSTANTRequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANTResponse" message="tns:RDF_EVENT_FRAMEWORK_INSERT_CONSTANTResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest" message="tns:RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse" message="tns:RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest" message="tns:RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse" message="tns:RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_PARSE">
+      <wsdl:input name="VFS_ROBOTS_PARSERequest" message="tns:VFS_ROBOTS_PARSERequest" />
+      <wsdl:output name="VFS_ROBOTS_PARSEResponse" message="tns:VFS_ROBOTS_PARSEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest" message="tns:RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse" message="tns:RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DB">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBRequest" message="tns:RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBRequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBResponse" message="tns:RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENT">
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest" message="tns:RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest" />
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse" message="tns:RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_TEST_SQL_CONDITION">
+      <wsdl:input name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest" message="tns:EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse" message="tns:EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EventFrameworkProceduresDocLiteralBinding" type="tns:EventFrameworkProceduresDocLiteralPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLES">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLES" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGER">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGER" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERR_MAIL_SEND">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#ERR_MAIL_SEND" style="document" />
+      <wsdl:input name="ERR_MAIL_SENDRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ERR_MAIL_SENDResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_GET">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#VFS_ROBOTS_GET" style="document" />
+      <wsdl:input name="VFS_ROBOTS_GETRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VFS_ROBOTS_GETResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANT">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_INSERT_CONSTANT" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANTRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_INSERT_CONSTANTResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_PARSE">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#VFS_ROBOTS_PARSE" style="document" />
+      <wsdl:input name="VFS_ROBOTS_PARSERequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VFS_ROBOTS_PARSEResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DB">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DB" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_REGISTER_REMOTE_DBResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENT">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENT" style="document" />
+      <wsdl:input name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDF_EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_TEST_SQL_CONDITION">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_TEST_SQL_CONDITION" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EventFrameworkProcedures">
+    <documentation>Virtuoso SOAP services</documentation>
+    <wsdl:port name="EventFrameworkProceduresDocLiteralPort" binding="tns:EventFrameworkProceduresDocLiteralBinding">
+      <soap:address location="http://localhost:8890/EventFrameworkProcedures" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,37 @@
+Windows: Virtuoso installstion
+
+follow this guide: http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSUsageWindows
+make sure to register the ODBC Drivers!
+
+Now configurate the ODBC drivers with the Microsoft ODBC-Administrator: 
+http://linkedtv.condat.de:8890/doc/html/odbcimplementation.html
+or http://wikis.openlinksw.com/dataspace/owiki/wiki/VirtuosoWikiWeb/WinODBCtoVirt
+
+note: This server requires a secure connection (SSL): This setting is not needed for 
+connections to Virtuoso instances which are configured to demand SSL connections from 
+clients; such demands are handled automatically by the driver. 
+
+Problem 1: Setting up ODBC
+
+My server is running Windows 2008 64bit. for now I have installed Virtuoso trial using the msi package available for download from OpenLink’s website. During installation it automatically sets up a System DSN:
+
+There is a problem however. When I ran the test php script instead of graphs listed I got an error saying:
+
+<code>[Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application</code>
+
+Solution
+
+To resolve this a DSN must be created using 32-bit version of obdcad32.exe, which sits in c:\windows\sysWOW64\. There is a problem however: installing 64-bit Virtuoso package does not install 32-bti driver. To get those you must install the Connectivity Souite available as a free download from OpenLink’s website.     ntvcz2zz.msi http://download.openlinksw.com/downwiz/final.vsp?pfam=2&pform=26&pcat=51&prod=virtuoso-connect-psnl&os=x86_64-generic-win-64&os2=x86_64-generic-win-64&xpfam=virtuoso&xpform=personal&xpcat=connect&xos=x86_64-generic-win-64&release-dbms=6.4-virt64
+tutorial: http://wikis.openlinksw.com/dataspace/owiki/wiki/VirtuosoWikiWeb/VirtuosoInstallClientWin
+Then run odbcad32.exe to create a System DSN choosing OpenLink virtuoso driver. Now the php test script should work. Or should it?
+(http://t-code.pl/2011/11/installing-ontowiki-on-windows-with-virtuoso/)
+
+Create a user via Virtuoso-Conductor (http://localhost:8890/conductor) -> System Admin -> User Accounts -> create new account
+This user should have the following roles: administrators, SPARQL_SELECT, SPARQL_UPDATE.
+Choose the default catalog you want to create create the EventFramework for. (e.g. DB)
+
+LogIn as this user!
+
+Browse to Database -> Interactive SQL: Server-side script -> click Browse...
+Choose the CentralDB.sql file -> click 'Load' -> click 'Execute'
+

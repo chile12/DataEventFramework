@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EventClientNetTcp" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IEventClientNetTcp_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1235/EventServiceProxy?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1235/EventServiceProxy?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1235/EventServiceProxy?xsd=xsd2" namespace="http://tempuri.org/VirtuosoDataSet.xsd" />
+      <xsd:import schemaLocation="http://localhost:1235/EventServiceProxy?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RdfEventClientServiceLib.VirtuosoEventServiceRef" />
+      <xsd:import schemaLocation="http://localhost:1235/EventServiceProxy?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEventClientNetTcp_LogIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_LogIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_CreateNewAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAccount" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_CreateNewAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_SetUserAccountRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserAccountRights" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_SetUserAccountRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserAccountRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_SetEventDefinitionRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetEventDefinitionRights" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_SetEventDefinitionRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetEventDefinitionRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_RegisterTrigger_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterTrigger" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_RegisterTrigger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterTriggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_SetNewRdfTrigger_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetNewRdfTrigger" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_SetNewRdfTrigger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetNewRdfTriggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetSchemaTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemaTables" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetSchemaTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemaTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetDatabases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabases" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetDatabases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetTriggersOfTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTriggersOfTable" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetTriggersOfTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTriggersOfTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEvents" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetSupportedDBs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportedDBs" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetSupportedDBs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportedDBsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetRemoteProcedureEndpoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemoteProcedureEndpoint" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_GetRemoteProcedureEndpoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemoteProcedureEndpointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_RegisterNewRemoteDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewRemoteDB" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_RegisterNewRemoteDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewRemoteDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_ExecuteTestSqlQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteTestSqlQuery" />
+  </wsdl:message>
+  <wsdl:message name="IEventClientNetTcp_ExecuteTestSqlQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteTestSqlQueryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEventClientNetTcp">
+    <wsdl:operation name="LogIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/LogIn" message="tns:IEventClientNetTcp_LogIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/LogInResponse" message="tns:IEventClientNetTcp_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/CreateNewAccount" message="tns:IEventClientNetTcp_CreateNewAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/CreateNewAccountResponse" message="tns:IEventClientNetTcp_CreateNewAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/ResetPassword" message="tns:IEventClientNetTcp_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/ResetPasswordResponse" message="tns:IEventClientNetTcp_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAccountRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/SetUserAccountRights" message="tns:IEventClientNetTcp_SetUserAccountRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/SetUserAccountRightsResponse" message="tns:IEventClientNetTcp_SetUserAccountRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEventDefinitionRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/SetEventDefinitionRights" message="tns:IEventClientNetTcp_SetEventDefinitionRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/SetEventDefinitionRightsResponse" message="tns:IEventClientNetTcp_SetEventDefinitionRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetUsers" message="tns:IEventClientNetTcp_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetUsersResponse" message="tns:IEventClientNetTcp_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterTrigger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/RegisterTrigger" message="tns:IEventClientNetTcp_RegisterTrigger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/RegisterTriggerResponse" message="tns:IEventClientNetTcp_RegisterTrigger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetNewRdfTrigger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/SetNewRdfTrigger" message="tns:IEventClientNetTcp_SetNewRdfTrigger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/SetNewRdfTriggerResponse" message="tns:IEventClientNetTcp_SetNewRdfTrigger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaTables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetSchemaTables" message="tns:IEventClientNetTcp_GetSchemaTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetSchemaTablesResponse" message="tns:IEventClientNetTcp_GetSchemaTables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetDatabases" message="tns:IEventClientNetTcp_GetDatabases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetDatabasesResponse" message="tns:IEventClientNetTcp_GetDatabases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTriggersOfTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetTriggersOfTable" message="tns:IEventClientNetTcp_GetTriggersOfTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetTriggersOfTableResponse" message="tns:IEventClientNetTcp_GetTriggersOfTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetEvents" message="tns:IEventClientNetTcp_GetEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetEventsResponse" message="tns:IEventClientNetTcp_GetEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedDBs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetSupportedDBs" message="tns:IEventClientNetTcp_GetSupportedDBs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetSupportedDBsResponse" message="tns:IEventClientNetTcp_GetSupportedDBs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteProcedureEndpoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetRemoteProcedureEndpoint" message="tns:IEventClientNetTcp_GetRemoteProcedureEndpoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/GetRemoteProcedureEndpointResponse" message="tns:IEventClientNetTcp_GetRemoteProcedureEndpoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewRemoteDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/RegisterNewRemoteDB" message="tns:IEventClientNetTcp_RegisterNewRemoteDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/RegisterNewRemoteDBResponse" message="tns:IEventClientNetTcp_RegisterNewRemoteDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteTestSqlQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEventClientNetTcp/ExecuteTestSqlQuery" message="tns:IEventClientNetTcp_ExecuteTestSqlQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEventClientNetTcp/ExecuteTestSqlQueryResponse" message="tns:IEventClientNetTcp_ExecuteTestSqlQuery_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IEventClientNetTcp" type="tns:IEventClientNetTcp">
+    <wsp:PolicyReference URI="#NetTcpBinding_IEventClientNetTcp_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="LogIn">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/LogIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/CreateNewAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAccountRights">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/SetUserAccountRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEventDefinitionRights">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/SetEventDefinitionRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/GetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterTrigger">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/RegisterTrigger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNewRdfTrigger">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/SetNewRdfTrigger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaTables">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/GetSchemaTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabases">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/GetDatabases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTriggersOfTable">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/GetTriggersOfTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvents">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/GetEvents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedDBs">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/GetSupportedDBs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteProcedureEndpoint">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/GetRemoteProcedureEndpoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewRemoteDB">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/RegisterNewRemoteDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteTestSqlQuery">
+      <soap12:operation soapAction="http://tempuri.org/IEventClientNetTcp/ExecuteTestSqlQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EventClientNetTcp">
+    <wsdl:port name="NetTcpBinding_IEventClientNetTcp" binding="tns:NetTcpBinding_IEventClientNetTcp">
+      <soap12:address location="net.tcp://localhost:1234/EventServiceProxy" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:1234/EventServiceProxy</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>WIN-N26JO1512TH\Administrator</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
